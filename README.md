@@ -41,14 +41,30 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/array-base-ternary2d
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import ternary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-ternary2d@esm/index.mjs';
+var ternary2d = require( '@stdlib/array-base-ternary2d' );
 ```
 
 #### ternary2d( arrays, shape, fcn )
@@ -56,7 +72,7 @@ import ternary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-ternary2
 Applies a ternary callback to elements in three two-dimensional nested input arrays and assigns results to elements in a two-dimensional nested output array.
 
 ```javascript
-import zeros2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zeros2d@esm/index.mjs';
+var zeros2d = require( '@stdlib/array-base-zeros2d' );
 
 function add( x, y, z ) {
     return x + y + z;
@@ -97,16 +113,11 @@ The function accepts the following arguments:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
-import filled2dBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-filled2d-by@esm/index.mjs';
-import zeros2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zeros2d@esm/index.mjs';
-import ternary2d from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-ternary2d@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var filled2dBy = require( '@stdlib/array-base-filled2d-by' );
+var zeros2d = require( '@stdlib/array-base-zeros2d' );
+var ternary2d = require( '@stdlib/array-base-ternary2d' );
 
 function add( x, y, z ) {
     return x + y + z;
@@ -128,10 +139,6 @@ console.log( out );
 
 ternary2d( [ x, y, z, out ], shape, add );
 console.log( out );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -155,7 +162,7 @@ console.log( out );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
