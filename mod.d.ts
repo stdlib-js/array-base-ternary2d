@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2023 The Stdlib Authors.
@@ -16,9 +16,20 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MAIN //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { Array2D } from '@stdlib/types/array';
+import { Shape2D } from '@stdlib/types/ndarray';
+
+/**
+* Ternary callback.
+*
+* @param value - input value
+* @returns result
+*/
+type Ternary<T, U, V, W> = ( v1: T, v2: U, v3: V ) => W;
 
 /**
 * Applies a ternary callback to elements in three two-dimensional nested input arrays and assigns results to elements in a two-dimensional nested output array.
@@ -27,14 +38,13 @@
 *
 * -   The function assumes that the input and output arrays have the same shape.
 *
-* @param {ArrayLikeObject<Array<Collection>>} arrays - array-like object containing three input nested arrays and one output nested array
-* @param {NonNegativeIntegerArray} shape - array shape
-* @param {Callback} fcn - ternary callback
-* @returns {void}
+* @param arrays - array containing three input nested arrays and one output nested array
+* @param shape - array shape
+* @param fcn - ternary callback
 *
 * @example
-* var ones2d = require( '@stdlib/array-base-ones2d' );
-* var zeros2d = require( '@stdlib/array-base-zeros2d' );
+* var ones2d = require( `@stdlib/array/base/ones2d` );
+* var zeros2d = require( `@stdlib/array/base/zeros2d` );
 *
 * function add( x, y, z ) {
 *     return x + y + z;
@@ -52,41 +62,9 @@
 * console.log( out );
 * // => [ [ 3.0, 3.0 ], [ 3.0, 3.0 ] ]
 */
-function ternary2d( arrays, shape, fcn ) {
-	var S0;
-	var S1;
-	var i0;
-	var i1;
-	var x0;
-	var y0;
-	var z0;
-	var w0;
-	var x;
-	var y;
-	var z;
-	var w;
-
-	S0 = shape[ 1 ];
-	S1 = shape[ 0 ];
-	if ( S0 <= 0 || S1 <= 0 ) {
-		return;
-	}
-	x = arrays[ 0 ];
-	y = arrays[ 1 ];
-	z = arrays[ 2 ];
-	w = arrays[ 3 ];
-	for ( i1 = 0; i1 < S1; i1++ ) {
-		x0 = x[ i1 ];
-		y0 = y[ i1 ];
-		z0 = z[ i1 ];
-		w0 = w[ i1 ];
-		for ( i0 = 0; i0 < S0; i0++ ) {
-			w0[ i0 ] = fcn( x0[ i0 ], y0[ i0 ], z0[ i0 ] );
-		}
-	}
-}
+declare function ternary2d<T = unknown, U = unknown, V = unknown, W = unknown>( arrays: [ Array2D<T>, Array2D<U>, Array2D<V>, Array2D<W> ], shape: Shape2D, fcn: Ternary<T, U, V, W> ): void;
 
 
 // EXPORTS //
 
-module.exports = ternary2d;
+export = ternary2d;
