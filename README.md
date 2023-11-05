@@ -41,38 +41,30 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/array-base-ternary2d
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-ternary2d = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-ternary2d@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var ternary2d = require( 'path/to/vendor/umd/array-base-ternary2d/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-ternary2d@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.ternary2d;
-})();
-</script>
+var ternary2d = require( '@stdlib/array-base-ternary2d' );
 ```
 
 #### ternary2d( arrays, shape, fcn )
@@ -121,13 +113,8 @@ The function accepts the following arguments:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.factory;
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var filled2dBy = require( '@stdlib/array-base-filled2d-by' );
 var zeros2d = require( '@stdlib/array-base-zeros2d' );
 var ternary2d = require( '@stdlib/array-base-ternary2d' );
@@ -152,11 +139,6 @@ console.log( out );
 
 ternary2d( [ x, y, z, out ], shape, add );
 console.log( out );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -210,8 +192,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/array-base-ternary2d.svg
 [npm-url]: https://npmjs.org/package/@stdlib/array-base-ternary2d
 
-[test-image]: https://github.com/stdlib-js/array-base-ternary2d/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/array-base-ternary2d/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/array-base-ternary2d/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/array-base-ternary2d/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/array-base-ternary2d/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/array-base-ternary2d?branch=main
